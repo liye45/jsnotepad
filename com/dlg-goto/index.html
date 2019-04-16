@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>转到对话框布局和测试页面</title>
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/dlg-common.css">
+  <link rel="stylesheet" href="dlg-goto.css">
+          
+</head>
+<body>
+  <div class="test">
+  <input type="button" value="弹出对话框">
+  </div>
+            
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="dlg-goto.js"></script>
+<script>
+$(function() {
+      var $btnTest = $('div.test>input[type="button"]');
+      $btnTest.click(function() {
+        $dlgGoto.show({
+                lineNum: 4,
+                      totalLine: 5,
+                      gotoHandler: function(lines) {
+                              console.log("goto btn click! GOTO %s lines.", lines);
+                                    
+                      }
+                          
+          });
+          
+        });
+
+    });
+</script>
+</body>
+</html>
